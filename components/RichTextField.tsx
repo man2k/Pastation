@@ -14,7 +14,13 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
   ssr: false,
 });
 
-const RichTextField = ({ gotContent, pasteID, submit }) => {
+type Props = {
+  gotContent?: string;
+  pasteID?: string;
+  submit?: any;
+};
+
+const RichTextField = ({ gotContent, pasteID, submit }: Props) => {
   const [content, setContent] = useState("");
   const router = useRouter();
 
@@ -51,169 +57,165 @@ const RichTextField = ({ gotContent, pasteID, submit }) => {
       });
   };
   return (
-    <div className="flex flex-col justify-center items-center w-full p-10 border-2 border-white">
+    <div className="flex flex-col justify-center items-center w-full">
       {submit != false ? (
-        <div className="w-full h-full border-2 border-white">
-          <SunEditor
-            defaultValue=""
-            setContents={content}
-            onChange={(e) => {
-              // console.log(e);
-              setContent(e);
-            }}
-            lang="en"
-            height="auto"
-            width="auto"
-            placeholder="PASTIT HERE..."
-            plugins={Object.keys(plugins)}
-            setOptions={{
-              code: "en",
-              mode: "balloon-always",
-              buttonList: [
-                // Default
-                ["undo", "redo"],
-                ["font", "fontSize", "formatBlock"],
-                ["paragraphStyle", "blockquote"],
+        <SunEditor
+          defaultValue=""
+          setContents={content}
+          onChange={(e) => {
+            // console.log(e);
+            setContent(e);
+          }}
+          lang="en"
+          height="auto"
+          width="auto"
+          placeholder="TYPE HERE..."
+          // plugins={Object.keys(plugins)}
+          setOptions={{
+            // code: "en",
+            mode: "balloon-always",
+            buttonList: [
+              // Default
+              ["undo", "redo"],
+              ["font", "fontSize", "formatBlock"],
+              ["paragraphStyle", "blockquote"],
+              [
+                "bold",
+                "underline",
+                "italic",
+                "strike",
+                "subscript",
+                "superscript",
+              ],
+              ["fontColor", "hiliteColor", "textStyle"],
+              ["removeFormat"],
+              ["align", "horizontalRule", "list", "lineHeight"],
+              ["table", "link", "image", "video", "audio"],
+              // ["imageGallery"],
+              ["showBlocks", "codeView"],
+              ["preview", "print"],
+              // ["-left", "#fix", "dir_ltr", "dir_rtl"],
+              // (min-width:992px)
+              [
+                "%992",
                 [
-                  "bold",
-                  "underline",
-                  "italic",
-                  "strike",
-                  "subscript",
-                  "superscript",
-                ],
-                ["fontColor", "hiliteColor", "textStyle"],
-                ["removeFormat"],
-                ["align", "horizontalRule", "list", "lineHeight"],
-                ["table", "link", "image", "video", "audio"],
-                // ["imageGallery"],
-                ["showBlocks", "codeView"],
-                ["preview", "print"],
-                // ["-left", "#fix", "dir_ltr", "dir_rtl"],
-                // (min-width:992px)
-                [
-                  "%992",
+                  ["undo", "redo"],
                   [
-                    ["undo", "redo"],
-                    [
-                      ":p-More Paragraph-default.more_paragraph",
-                      "font",
-                      "fontSize",
-                      "formatBlock",
-                      "paragraphStyle",
-                      "blockquote",
-                    ],
-                    ["bold", "underline", "italic", "strike"],
-                    [
-                      ":t-More Text-default.more_text",
-                      "subscript",
-                      "superscript",
-                      "fontColor",
-                      "hiliteColor",
-                      "textStyle",
-                    ],
-                    ["removeFormat"],
-                    ["align", "horizontalRule", "list", "lineHeight"],
-                    ["-right", "dir"],
-                    [
-                      "-right",
-                      ":i-More Misc-default.more_vertical",
-                      "showBlocks",
-                      "codeView",
-                      "preview",
-                      "print",
-                    ],
-                    [
-                      "-right",
-                      ":r-More Rich-default.more_plus",
-                      "table",
-                      "link",
-                      "image",
-                      "video",
-                      "audio",
-                      // "math",
-                      // "imageGallery",
-                    ],
+                    ":p-More Paragraph-default.more_paragraph",
+                    "font",
+                    "fontSize",
+                    "formatBlock",
+                    "paragraphStyle",
+                    "blockquote",
                   ],
-                ],
-                // (min-width:768px)
-                [
-                  "%768",
+                  ["bold", "underline", "italic", "strike"],
                   [
-                    ["undo", "redo"],
-                    [
-                      ":p-More Paragraph-default.more_paragraph",
-                      "font",
-                      "fontSize",
-                      "formatBlock",
-                      "paragraphStyle",
-                      "blockquote",
-                    ],
-                    [
-                      ":t-More Text-default.more_text",
-                      "bold",
-                      "underline",
-                      "italic",
-                      "strike",
-                      "subscript",
-                      "superscript",
-                      "fontColor",
-                      "hiliteColor",
-                      "textStyle",
-                      "removeFormat",
-                    ],
-                    [
-                      ":e-More Line-default.more_horizontal",
-                      "align",
-                      "horizontalRule",
-                      "list",
-                      "lineHeight",
-                    ],
-                    [
-                      ":r-More Rich-default.more_plus",
-                      "table",
-                      "link",
-                      "image",
-                      "video",
-                      "audio",
-                      // "math",
-                      // "imageGallery",
-                    ],
-                    ["-right", "dir"],
-                    [
-                      "-right",
-                      ":i-More Misc-default.more_vertical",
-                      "showBlocks",
-                      "codeView",
-                      "preview",
-                      "print",
-                    ],
+                    ":t-More Text-default.more_text",
+                    "subscript",
+                    "superscript",
+                    "fontColor",
+                    "hiliteColor",
+                    "textStyle",
+                  ],
+                  ["removeFormat"],
+                  ["align", "horizontalRule", "list", "lineHeight"],
+                  ["-right", "dir"],
+                  [
+                    "-right",
+                    ":i-More Misc-default.more_vertical",
+                    "showBlocks",
+                    "codeView",
+                    "preview",
+                    "print",
+                  ],
+                  [
+                    "-right",
+                    ":r-More Rich-default.more_plus",
+                    "table",
+                    "link",
+                    "image",
+                    "video",
+                    "audio",
+                    // "math",
+                    // "imageGallery",
                   ],
                 ],
               ],
-              plugins: plugins,
-            }}
-            setDefaultStyle="font-family: monospace; font-size:16px; background: #1f2937; color: white; border-radius: 6px; min-height: 50vh"
-            setAllPlugins={true}
-          />
-        </div>
+              // (min-width:768px)
+              [
+                "%768",
+                [
+                  ["undo", "redo"],
+                  [
+                    ":p-More Paragraph-default.more_paragraph",
+                    "font",
+                    "fontSize",
+                    "formatBlock",
+                    "paragraphStyle",
+                    "blockquote",
+                  ],
+                  [
+                    ":t-More Text-default.more_text",
+                    "bold",
+                    "underline",
+                    "italic",
+                    "strike",
+                    "subscript",
+                    "superscript",
+                    "fontColor",
+                    "hiliteColor",
+                    "textStyle",
+                    "removeFormat",
+                  ],
+                  [
+                    ":e-More Line-default.more_horizontal",
+                    "align",
+                    "horizontalRule",
+                    "list",
+                    "lineHeight",
+                  ],
+                  [
+                    ":r-More Rich-default.more_plus",
+                    "table",
+                    "link",
+                    "image",
+                    "video",
+                    "audio",
+                    // "math",
+                    // "imageGallery",
+                  ],
+                  ["-right", "dir"],
+                  [
+                    "-right",
+                    ":i-More Misc-default.more_vertical",
+                    "showBlocks",
+                    "codeView",
+                    "preview",
+                    "print",
+                  ],
+                ],
+              ],
+            ],
+            plugins: plugins,
+          }}
+          setDefaultStyle="font-family: monospace; font-size:16px; background: hsl(var(--b3)); color: white; min-height: 50vh; width: 100%; height: 100%;"
+          setAllPlugins={true}
+        />
       ) : (
-        <div className="w-full">
-          <SunEditor
-            defaultValue=""
-            setContents={gotContent}
-            placeholder="Loading..."
-            setOptions={{
-              code: "en",
-              mode: "balloon-always",
-            }}
-            disable
-            lang="en"
-            height="auto"
-            width="auto"
-            setDefaultStyle="font-family: monospace; font-size:16px; background: #1f2937; color: white; border-radius: 6px;"
-          />
-        </div>
+        <SunEditor
+          defaultValue=""
+          setContents={gotContent}
+          placeholder="Loading..."
+          setOptions={{
+            // code: "en",
+            mode: "balloon-always",
+          }}
+          disable
+          lang="en"
+          height="auto"
+          width="auto"
+          setDefaultStyle="font-family: monospace; font-size:16px; background: hsl(var(--b3)); color: white; min-height: 50vh; width: 100%; height: 100%;"
+        />
       )}
 
       {submit === false ? (
@@ -221,10 +223,10 @@ const RichTextField = ({ gotContent, pasteID, submit }) => {
       ) : (
         <div>
           <button
-            className="border-1 border-black bg-indigo-400 hover:bg-indigo-600 rounded-lg w-24 mt-3 p-2 transition ease-in-out hover:font-bold font-mono antialiased"
+            className="bg-gray-600 h-9 rounded-sm w-32 mt-4 text-base transition ease-in-out hover:font-bold border-b-[1px] border-white shadow-lg shadow-black"
             onClick={handleSubmit}
           >
-            Paste
+            PASTE
           </button>
         </div>
       )}

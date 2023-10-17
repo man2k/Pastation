@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
 import languages from "../public/assets/languages.json";
 import shortid from "shortid";
-import { stringify } from "flatted";
-import axios from "axios";
-import CryptoJS from "crypto-js";
+// import { stringify } from "flatted";
+// import axios from "axios";
+// import CryptoJS from "crypto-js";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -51,9 +51,8 @@ const CodeTextField = (props: Props) => {
   // };
 
   return (
-    <div className="flex-col w-full p-5 px-12 text-center">
-      <div className="flex border-1 mb-3">
-        {/* <button onClick={showValue}>Show value</button> */}
+    <div className="flex-col w-full text-center">
+      {/* <div className="flex border-1 mb-3">
         <select
           name={language}
           id="Language"
@@ -90,10 +89,9 @@ const CodeTextField = (props: Props) => {
           <br />
           <label className="bg-black p-1 rounded-xl">Ctrl+F</label>
         </div>
-      </div>
+      </div> */}
       <Editor
-        height="60vh"
-        width="auto"
+        className="min-h-[50vh] w-full border-[1px] border-white border-t-0"
         defaultLanguage="plaintext"
         language={language}
         defaultValue=""
@@ -128,7 +126,7 @@ const CodeTextField = (props: Props) => {
       />
       <div>
         <button
-          className="bg-violet-900 rounded-2xl p-3 text-white text-mono w-28 mt-3 hover:bg-violet-950 hover:font-bold"
+          className="bg-gray-600 h-9 rounded-sm w-32 mt-4 text-base transition ease-in-out hover:font-bold border-b-[1px] border-white shadow-lg shadow-black"
           onClick={handlePaste}
         >
           PASTE

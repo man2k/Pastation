@@ -1,25 +1,26 @@
-"use client";
-import RichTextField from "@/components/RichTextField";
-import CodeTextField from "@/components/CodeTextField";
-import { useState } from "react";
+import Link from "next/link";
 
-export default function Home() {
-  const [richOrCode, setRichOrCode] = useState("Rich");
-  const setField = () => {
-    if (richOrCode == "Rich") setRichOrCode("Code");
-    else setRichOrCode("Rich");
-  };
+const page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-24 py-5">
-      <div className="flex flex-col justify-center items-center">
-        <input
-          type="checkbox"
-          className="toggle toggle-info"
-          onChange={setField}
-        />
-        <p className="text-blue-500 font-bold">{richOrCode}</p>
+    <main className="flex min-h-screen flex-col items-center gap-8 p-24">
+      <div className="mt-20">
+        <h1 className="text-neutral-content text-5xl">
+          <span className="text-stone-300">PA</span>{" "}
+          <span className="text-amber-400">Station</span>
+        </h1>
+        <h2>
+          All In One Pasting <span className="text-emerald-400">Solution</span>
+        </h2>
       </div>
-      {richOrCode == "Rich" ? <RichTextField /> : <CodeTextField />}
+      <div>
+        <Link href="/paste">
+          <button className="btn border-0 border-b-[1px] border-white">
+            Try it now..
+          </button>
+        </Link>
+      </div>
     </main>
   );
-}
+};
+
+export default page;

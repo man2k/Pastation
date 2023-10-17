@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const navIcons = [
   { src: "/assets/icons/search.svg", alt: "search" },
-  { src: "/assets/icons/black-heart.svg", alt: "heart" },
+  // { src: "/assets/icons/black-heart.svg", alt: "heart" },
   { src: "/assets/icons/user.svg", alt: "user" },
 ];
 
@@ -19,10 +19,12 @@ const Navbar = () => {
             src="/logo.png"
             className="rounded-full"
           />
-          <p>
-            <span className="text-white font-serif mr-1">PA</span>
-            <span className="text-green-300 text-xl font-serif">STATION</span>
-          </p>
+          <p className="text-neutral-content">Pastation</p>
+        </Link>
+        <Link href="/paste">
+          <button className="btn text-xs rounded-full font-mono shadow-lg">
+            New Paste
+          </button>
         </Link>
         <div className="flex items-center gap-5">
           {navIcons.map((icon) => (

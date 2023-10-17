@@ -16,7 +16,16 @@ const config: Config = {
     },
   },
   daisyui: {
-    themes: ["light", "dark", "black", "business"],
+    themes: [
+      "light",
+      "dark",
+      "black",
+      "business",
+      "forest",
+      "dracula",
+      "night",
+      "aqua",
+    ],
   },
   plugins: [require("daisyui")],
 };

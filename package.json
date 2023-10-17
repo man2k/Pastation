@@ -30,6 +30,9 @@
     "daisyui": "^3.9.2",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "@types/crypto-js": "^4.1.2",
+		"@types/shortid": "^0.0.30",
+		"@types/uuid": "^9.0.5"
   }
 }
