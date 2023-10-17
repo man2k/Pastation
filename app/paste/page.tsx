@@ -34,7 +34,7 @@ export default function Home() {
         >
           <li>
             <button
-              onClick={() => {
+              onClick={(_e) => {
                 if (richOrCode != "Rich") {
                   setField();
                 }
@@ -45,7 +45,7 @@ export default function Home() {
           </li>
           <li>
             <button
-              onClick={() => {
+              onClick={(_e) => {
                 if (richOrCode != "Code") {
                   setField();
                 }
