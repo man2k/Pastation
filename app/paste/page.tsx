@@ -22,7 +22,10 @@ export default function Home() {
         </p>
       </div> */}
       <div className="dropdown dropdown-left dropdown-end ">
-        <label tabIndex={0} className="btn m-1">
+        <label
+          tabIndex={0}
+          className="btn btn-square bg-neutral-focus px-8 text-base w-max m-1 flex"
+        >
           {richOrCode}
         </label>
         <ul
@@ -30,10 +33,26 @@ export default function Home() {
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
           <li>
-            <button onClick={setField}>Rich Editor</button>
+            <button
+              onClick={() => {
+                if (richOrCode != "Rich") {
+                  setField();
+                }
+              }}
+            >
+              Rich Editor
+            </button>
           </li>
           <li>
-            <button onClick={setField}>Code Editor</button>
+            <button
+              onClick={() => {
+                if (richOrCode != "Code") {
+                  setField();
+                }
+              }}
+            >
+              Code Editor
+            </button>
           </li>
         </ul>
       </div>

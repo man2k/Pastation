@@ -91,7 +91,7 @@ const CodeTextField = (props: Props) => {
         </div>
       </div> */}
       <Editor
-        className="min-h-[50vh] w-full border-[1px] border-white border-t-0"
+        className="min-h-[50vh] w-full border-[1px] border-white border-t-[0.3px]"
         defaultLanguage="plaintext"
         language={language}
         defaultValue=""
