@@ -2,11 +2,16 @@
 import RichTextField from "@/components/RichTextField";
 import CodeTextField from "@/components/CodeTextField";
 import { useState } from "react";
+import dynamic from "next/dynamic";
+// import RichTextField2 from "@/components/RichTextField2";
+const RichTextField2 = dynamic(() => import("@/components/RichTextField2"), {
+  ssr: false,
+});
 
 export default function Home() {
   const [richOrCode, setRichOrCode] = useState("Rich");
   const setField = () => {
-    if (richOrCode == "Rich") setRichOrCode("Code");
+    if (richOrCode === "Rich") setRichOrCode("Code");
     else setRichOrCode("Rich");
   };
   return (
@@ -34,6 +39,7 @@ export default function Home() {
         >
           <li>
             <button
+              className="py-2 border-b-0"
               onClick={(_e) => {
                 if (richOrCode != "Rich") {
                   setField();
@@ -45,6 +51,7 @@ export default function Home() {
           </li>
           <li>
             <button
+              className="py-2 border-b-0"
               onClick={(_e) => {
                 if (richOrCode != "Code") {
                   setField();
@@ -57,7 +64,7 @@ export default function Home() {
         </ul>
       </div>
       <div className="w-full h-full">
-        {richOrCode == "Rich" ? <RichTextField /> : <CodeTextField />}
+        {richOrCode == "Rich" ? <RichTextField2 /> : <CodeTextField />}
       </div>
     </main>
   );

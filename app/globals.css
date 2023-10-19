@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ql-editor {
+  color: white;
+  fill: white;
+  stroke: white;
+  background-color: black;
+  min-height: 330px;
+}
+
+.ql-toolbar {
+  color: white;
+  fill: white;
+  stroke: white;
+  background-color: black;
+  font-size: 1.75rem /* 20px */;
+  line-height: 1.75rem;
+}
+
+.ql-snow .ql-tooltip input[type="text"] {
+  background-color: black;
+  color: white;
+}
+
+.ql-stroke,
+.ql-picker-label .ql-stroke {
+  fill: none;
+  stroke: white !important;
+}
+
+.ql-fill,
+.ql-picker-label .ql-fill {
+  fill: white !important;
+  stroke: none;
+}
+
+.ql-tooltip {
+  background-color: black !important;
+  color: white !important;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  background-color: black !important;
+  color: white !important;
+}
+
+.ql-snow .ql-picker-label {
+  background-color: black !important;
+  color: white !important;
+}
