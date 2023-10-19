@@ -28,7 +28,7 @@ export default function Home() {
         <ul
           tabIndex={0}
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-          onChange={setRichOrCode}
+          onChange={setField}
         >
           <li>
             <button>Rich Editor</button>
