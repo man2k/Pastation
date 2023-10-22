@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
 import languages from "../public/assets/languages.json";
 import shortid from "shortid";
+import Loading from "./Loading";
+
 // import { stringify } from "flatted";
 // import axios from "axios";
 // import CryptoJS from "crypto-js";
@@ -13,7 +15,7 @@ import { v4 as uuidv4 } from "uuid";
 type Props = {};
 
 const CodeTextField = (props: Props) => {
-  const [language, setLanguage] = useState("plaintext");
+  const [language, setLanguage] = useState("javascript");
   const [lineNumbers, setlineNumbers] = useState<any>("on");
   const [minimap, setMinimap] = useState(false);
 
@@ -38,11 +40,11 @@ const CodeTextField = (props: Props) => {
   };
 
   const handlePaste = async () => {
-    // console.log(paste.current.getValue());
+    console.log(paste.current.getValue());
     const content: string = paste.current.getValue();
     if (content === "") return;
-    const uuid = uuidv4();
-    const id = shortid.generate();
+    // const uuid = uuidv4();
+    // const id = shortid.generate();
   };
 
   // const showValue = () => {
@@ -52,7 +54,7 @@ const CodeTextField = (props: Props) => {
 
   return (
     <div className="flex-col w-full text-center">
-      {/* <div className="flex border-1 mb-3">
+      <div className="flex border-[1.5px] py-1 border-white mb-2 bg-stone-900 gap-5 rounded-xl rounded-bl-none font-semibold">
         <select
           name={language}
           id="Language"
@@ -60,7 +62,7 @@ const CodeTextField = (props: Props) => {
             //   console.log(e.target.value);
             setLanguage(e.target.value);
           }}
-          className="flex bg-slate-900 rounded-xl text-white text-center font-mono"
+          className="flex text-white text-center font-mono text-sm focus:bg-black bg-transparent rounded-l-xl rounded-bl-none"
         >
           {languages.map((e, key) => {
             return (
@@ -70,7 +72,7 @@ const CodeTextField = (props: Props) => {
             );
           })}
         </select>
-        <div className="flex-col bg-slate-900 ml-6 rounded-xl text-center font-mono">
+        <div className="flex-col text-center font-mono text-sm">
           <label className="p-3 text-white">Minimap</label>
           <br />
           <input
@@ -79,23 +81,24 @@ const CodeTextField = (props: Props) => {
             onChange={toggleMinimap}
           />
         </div>
-        <div className="flex-col bg-slate-900 ml-6 rounded-xl text-center font-mono">
-          <label className="text-white rounded-xl p-3">Line Numbers</label>
+        <div className="flex-col text-center font-mono text-sm">
+          <label className="text-white">Line Numbers</label>
           <br />
           <input type="checkbox" defaultChecked onChange={handleLineNumbers} />
         </div>
-        <div className="flex-col bg-slate-900 ml-6 rounded-xl text-center font-mono text-white">
+        {/* <div className="flex-col text-center font-mono text-white">
           <label className="p-3">Find</label>
           <br />
-          <label className="bg-black p-1 rounded-xl">Ctrl+F</label>
-        </div>
-      </div> */}
+          <label className="bg-black">Ctrl+F</label>
+        </div> */}
+      </div>
       <Editor
         className="min-h-[50vh] w-full border-[1px] border-white border-t-[0.3px]"
         defaultLanguage="plaintext"
         language={language}
         defaultValue=""
-        theme="hc-black"
+        theme="vs-dark"
+        loading={<Loading />}
         onMount={handleInputChange}
         options={{
           readOnly: false,

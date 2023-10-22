@@ -7,7 +7,12 @@
   fill: white;
   stroke: white;
   background-color: black;
-  min-height: 330px;
+  min-height: 380px;
+  border-radius: 0rem 0rem 0.8rem 0.8rem !important;
+}
+
+.ql-container {
+  border-radius: 0rem 0rem 0.8rem 0.8rem !important;
 }
 
 .ql-toolbar {

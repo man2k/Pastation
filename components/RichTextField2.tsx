@@ -15,10 +15,10 @@ const RichTextField2 = () => {
   };
   return (
     <div className="flex flex-col">
-      <div className="text-editor">
+      <div className="">
         <EditorToolbar />
         <ReactQuill
-          className="text-xl"
+          className="text-xl mt-1"
           theme="snow"
           value={value}
           onChange={handleValue}

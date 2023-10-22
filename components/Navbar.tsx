@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <header className="w-full overflow-hidden">
       <nav
-        className="flex justify-between items-center px-6 md:px-20 backdrop-blur-md border-b-[0.5px] border-white bg-slate-800 relative w-full
+        className="flex justify-between items-center px-6 md:px-20 backdrop-blur-md border-b-[0.5px] border-white bg-gray-850 relative w-full
       "
       >
         <Link href="/" className="">
