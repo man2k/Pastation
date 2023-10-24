@@ -15,7 +15,7 @@ const RichTextField2 = () => {
   };
   return (
     <div className="flex flex-col">
-      <div className="">
+      <div>
         <EditorToolbar />
         <ReactQuill
           className="text-xl mt-1"

@@ -54,7 +54,7 @@ const CodeTextField = (props: Props) => {
 
   return (
     <div className="flex-col w-full text-center">
-      <div className="flex border-[1.5px] py-1 border-white mb-2 bg-stone-900 gap-5 rounded-xl rounded-bl-none font-semibold">
+      <div className="flex border-[1.5px] py-0.5 border-white mb-2 bg-stone-900 gap-5 rounded-xl rounded-b-none font-semibold">
         <select
           name={language}
           id="Language"

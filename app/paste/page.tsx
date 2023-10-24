@@ -15,7 +15,7 @@ export default function Home() {
     else setRichOrCode("Rich");
   };
   return (
-    <main className="flex min-h-screen flex-col items-center gap-8 px-24 py-5">
+    <main className="flex min-h-screen flex-col items-center gap-8 px-24 py-5 bg-[url('../public/assets/bck.jpg')]">
       {/* <div className="flex flex-col justify-center items-center">
         <input
           type="checkbox"
