@@ -15,7 +15,7 @@ export default function Home() {
     else setRichOrCode("Rich");
   };
   return (
-    <main className="flex min-h-screen flex-col items-center gap-8 px-24 py-5 bg-[url('../public/assets/bck.jpg')]">
+    <main className="flex min-h-screen flex-col items-center gap-8 px-24 py-5 bg-[url('../public/assets/bck.jpg')] bg-cover">
       {/* <div className="flex flex-col justify-center items-center">
         <input
           type="checkbox"
@@ -29,7 +29,7 @@ export default function Home() {
       <div className="dropdown dropdown-left dropdown-end ">
         <label
           tabIndex={0}
-          className="btn btn-square bg-neutral-focus px-8 text-base w-max m-1 flex"
+          className="btn btn-square bg-neutral-focus px-8 text-base w-max m-1 flex hover:text-white"
         >
           {richOrCode}
         </label>
@@ -39,7 +39,7 @@ export default function Home() {
         >
           <li>
             <button
-              className="py-2 border-b-0"
+              className="py-2 border-b-0 hover:bg-inherit hover:text-white hover:font-bold"
               onClick={(_e) => {
                 if (richOrCode != "Rich") {
                   setField();
@@ -51,7 +51,7 @@ export default function Home() {
           </li>
           <li>
             <button
-              className="py-2 border-b-0"
+              className="py-2 border-b-0 hover:bg-inherit hover:text-white hover:font-bold"
               onClick={(_e) => {
                 if (richOrCode != "Code") {
                   setField();

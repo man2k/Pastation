@@ -10,8 +10,12 @@ const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 const RichTextField2 = () => {
   const [value, setValue] = useState("");
   const handleValue = (e: string) => {
-    console.log(e);
+    // console.log(e);
     setValue(e);
+  };
+
+  const handleSubmit = () => {
+    console.log(value);
   };
   return (
     <div className="flex flex-col">
@@ -29,8 +33,8 @@ const RichTextField2 = () => {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="bg-gray-600 h-9 rounded-sm w-32 mt-4 text-base transition ease-in-out hover:font-bold border-b-[1px] border-white shadow-lg shadow-black"
-          // onClick={handleSubmit}
+          className="bg-gray-600 h-9 rounded-sm w-32 mt-4 text-base transition ease-in-out hover:font-bold border-b-[1px] border-white text-white shadow-lg shadow-black"
+          onClick={handleSubmit}
         >
           PASTE
         </button>

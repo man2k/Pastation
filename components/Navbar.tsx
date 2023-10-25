@@ -10,7 +10,7 @@ const navIcons = [
 const Navbar = () => {
   return (
     <header className="w-full overflow-hidden">
-      <nav className="flex justify-between items-center px-6 md:px-20 backdrop-blur-md border-b-[0.5px] border-white bg-gray-850 relative w-full bg-[url('../public/assets/navbck.jpg')]">
+      <nav className="flex justify-between items-center px-6 md:px-20 backdrop-blur-md border-b-[0.5px] border-white bg-gray-850 relative w-full bg-zinc-950">
         <Link href="/" className="">
           {/* <Image
             width={27}
@@ -24,14 +24,14 @@ const Navbar = () => {
             <Image
               src="/assets/images/train.png"
               alt="train-logo"
-              width={50}
-              height={50}
-              className="invert fixed ml-24"
+              width={40}
+              height={40}
+              className="fixed ml-24 mt-1"
             />
           </div>
         </Link>
         <Link href="/paste">
-          <button className="btn text-xs rounded-full font-mono shadow-lg capitalize font-bold border-b-[1px] border-b-white shadow-slate-500 mr-16 text-white">
+          <button className="btn text-sm bg-gray-900 hover:bg-black font-mono shadow-lg capitalize font-bold border-b-[1px] border-b-white shadow-slate-500 mr-16 text-white">
             NEW
           </button>
         </Link>

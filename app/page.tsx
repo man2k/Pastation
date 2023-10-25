@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center gap-8 p-24 bg-[url('../public/assets/bck.jpg')]">
-      <div className="flex flex-col items-center gap-8 w-full h-[25rem] py-10 shadow-lg shadow-white bg-[url('../public/assets/bck.jpg')]">
+    <main className="flex min-h-screen flex-col items-center gap-8 p-24 bg-[url('../public/assets/bck.jpg')] bg-cover">
+      <div className="flex flex-col items-center gap-8 w-full h-[25rem] py-10 shadow-lg shadow-white bg-transparent">
         <div className="mt-20">
           <h1 className="text-neutral-content text-5xl">
             <span className="text-white">PA</span>{" "}
