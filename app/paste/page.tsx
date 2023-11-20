@@ -29,7 +29,7 @@ export default function Home() {
       <div className="dropdown dropdown-left dropdown-end ">
         <label
           tabIndex={0}
-          className="btn btn-square bg-neutral-focus px-8 text-base w-max m-1 flex hover:text-white"
+          className="btn btn-square bg-neutral-focus px-8 text-base w-max m-1 flex hover:text-white default:text-white"
         >
           {richOrCode}
         </label>
